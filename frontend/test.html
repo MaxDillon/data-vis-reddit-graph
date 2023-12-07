@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<script type="module" src="./app.js"></script>
+
+
+<div class="row">
+    <div class="container">
+        <div id="tooltip"></div>
+    
+        <svg id="graph"></svg>
+        <div class="config">
+            <label>Node Size: </label>
+            <input id="node-size" type="range" min="0.05" max="5" step="0.05"></input>
+            <label>Edge Width</label>
+            <input id="edge-size" type="range" min="0" max="1" value="0.2" step="0.05"></input>
+            <label>Repulsive Force: </label>
+            <input id="node-force" type="range" min="0" max="50" value="15" step="1"></input>
+            <label>Edge Force: </label>
+            <input id="edge-force" type="range" min="0" max="0.5" step="0.001"></input>
+            <label>Number of Edges: </label>
+            <input id="max-nodes" type="range" min="5" max="1000" step="1"></input>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Filter Options</h1>
+        <div class="config">
+            <label>Min Sentiment:</label>
+            <input id="min-sentiment" type="range" min="-1" max="1" value="-1" step="0.001"></input>
+            <label>Max Sentiment:</label>
+            <input id="max-sentiment" type="range" min="-1" max="1" value="1" step="0.001"></input>
+            <label>Timerange Start:</label>
+            <input id="min-time" type="range" min="0" max="1216" value="0" step="1"></input>
+            <label>Timerange End:</label>
+            <input id="max-time" type="range" min="0" max="1216" value="1216" step="1"></input>
+            <button id="reset-select">Reset Selection</button>
+            <p></p>
+        </div>
+        <p>Timeframe: <span id="timestart"></span> - <span id="timeend"></span></p>
+    </div>
+</div>
+
+
+
+
+<style>
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .full {
+        height: 100%;
+        min-height: 100%;
+    }
+
+    label {
+        display: grid;
+        /* flex-direction: row;
+        min-width: 100%; */
+    }
+
+    .config {
+        margin-top: 1rem;
+        grid-template-columns: 150px 1fr;
+        display: grid;
+    }
+
+    .container {
+        display: inline-block;
+        margin: 2rem;
+    }
+
+    svg {
+        border: 2px solid black;
+        display: block;
+    }
+
+    #tooltip {
+        position: absolute;
+        visibility: hidden;
+        border: 1px solid rgb(172, 172, 172);
+        padding: 0 1rem;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        border-radius: 10px 10px;
+        border-top-left-radius: 0;
+        top: 0;
+        left: 0;
+    }
+
+    * {
+        font-family: monospace;
+    }
+</style>
