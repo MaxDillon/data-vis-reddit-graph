@@ -1,1 +1,4 @@
-data
+data/soc-redditHyperlinks-body.tsv
+data/soc-redditHyperlinks-title.tsv
+
+__pycache__
