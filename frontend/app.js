@@ -13,14 +13,3 @@ let nodes = createNodesObject(data, config);
 let network = new Network(config);
 
 network.draw(nodes, edges);
-
-// setInterval(async () => {
-//     if (document.visibilityState !== "visible") return;
-//     data = await parseData("http://localhost:4000");
-
-//     edges = createLinksObject(data);
-//     nodes = createNodesObjectWithPosition(data, nodes, config);
-
-//     network.clear();
-//     network.draw(nodes, edges, 0.5);
-// }, 5000);
