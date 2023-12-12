@@ -1,9 +1,11 @@
 from flask import Flask, request
+from flask_cors import CORS
 from read_data import get_nodes_edges, get_posts, _get_node_data
 import pandas as pd
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 
 def edge_filter(edges: pd.DataFrame, number):
